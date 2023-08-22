@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import PlayersList from './PlayersList';
+import { Container, Navbar, Nav, } from "react-bootstrap";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Navbar>
+        <Container>
+          <Navbar.Brand href="#home">Soccer</Navbar.Brand>
+          <Nav className="ms-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Product</Nav.Link>
+            <Nav.Link href="#pricing">Contact</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <br/>
+      <h1 style={{marginLeft: '20px'}}>Football Players</h1>
+      <br/>
+      <PlayersList />
     </div>
   );
 }
